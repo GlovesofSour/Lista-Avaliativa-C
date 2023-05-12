@@ -5,32 +5,33 @@ anteriores. Alguns termos dessa sequência são: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34
 
 #include <stdio.h>
 
-int fibonacci(int n);
+int main(){
 
-int main() {
-    int num;
+    int  num=0, i=0, fibonacci=0, t1=0, t2=13;
 
-    printf("--------------------------\n");
-    printf(" N NUMERO DA SEQUENCIA\n");
-    printf("     DE FIBONACCI\n");
-    printf("--------------------------\n");
+    printf("------------------------------------\n");
+    printf(" ENESIMO TERMO DA SEQUENCIA DE\n");
+    printf("           FIBONACCI\n");
+    printf("------------------------------------\n");
 
-    printf("Digite o valor de n: ");
-    scanf("%d", &num);
+    do{
+        printf("Digite um numero inteiro positivo: ");
+        scanf("%d", &num);
+        
+        if(num < 0){
+        	printf("Numero invalido, tente novamente!\n");
+		}	
+    }while(num < 0);
 
-    printf("--------------------------\n");
-    printf("O %do termo da sequencia de Fibonacci: %d\n", num, fibonacci(num));
-    printf("--------------------------\n");
+    for(i=0; i<num; i++){
+        t1 = t2;
+        t2 = fibonacci;
+        fibonacci =+ t1 + t2;
+    }
+
+    printf("------------------------------------\n");
+    printf("O %do termo da sequencia de Fibonacci eh: %d\n", num, fibonacci);
+    printf("------------------------------------\n");
 
     return 0;
-}
-
-fibonacci(int n) {
-    if (n <= 1) {
-
-        return n;
-    } else {
-
-        return fibonacci(n - 1) + fibonacci(n - 2);
-    }
 }
